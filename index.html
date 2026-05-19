@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShoppingMart | Modern Shopping Experience</title>
+    <meta name="description" content="Discover premium products at ShoppingMart. Groceries, clothing, electronics, and more.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Phosphor Icons (Modern Icons) -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                ShoppingMart
+            </a>
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#categories">Categories</a>
+                <a href="#products">Shop</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="nav-actions">
+                <div class="search-container">
+                    <input type="text" id="searchInput" class="search-input" placeholder="Search...">
+                    <button class="icon-btn" id="searchBtn" aria-label="Search"><i class="ph ph-magnifying-glass"></i></button>
+                </div>
+                <button class="icon-btn" id="navCartBtn" aria-label="Cart">
+                    <i class="ph ph-shopping-cart"></i>
+                    <span class="cart-badge">0</span>
+                </button>
+                <button class="mobile-menu-btn" aria-label="Menu"><i class="ph ph-list"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-content">
+            <button class="close-menu-btn" id="closeMenuBtn"><i class="ph ph-x"></i></button>
+            <a href="#home" class="mobile-link">Home</a>
+            <a href="#categories" class="mobile-link">Categories</a>
+            <a href="#products" class="mobile-link">Shop</a>
+            <a href="#about" class="mobile-link">About</a>
+            <a href="#contact" class="mobile-link">Contact</a>
+        </div>
+    </div>
+
+    <!-- Hero Carousel Section -->
+    <header id="home" class="hero-carousel">
+        <button class="carousel-btn prev-btn" id="prevSlideBtn" aria-label="Previous Slide"><i class="ph ph-caret-left"></i></button>
+        <button class="carousel-btn next-btn" id="nextSlideBtn" aria-label="Next Slide"><i class="ph ph-caret-right"></i></button>
+        
+        <!-- Slide 1 -->
+        <div class="carousel-slide active">
+            <div class="hero">
+                <div class="hero-content">
+                    <span class="badge">New Collection</span>
+                    <h1>Elevate Your Everyday Lifestyle</h1>
+                    <p>Discover premium quality products curated just for you. From tech essentials to fresh groceries and trendy apparel.</p>
+                    <div class="hero-buttons">
+                        <a href="#products" class="btn btn-primary">Shop Now <i class="ph ph-arrow-right"></i></a>
+                        <a href="#categories" class="btn btn-secondary">Explore Categories</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=800&q=80" alt="Fashion shopping model" />
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="carousel-slide">
+            <div class="hero">
+                <div class="hero-content">
+                    <span class="badge">Mega Sale</span>
+                    <h1>Unbeatable Electronics Deals</h1>
+                    <p>Upgrade your tech game with up to 50% off on top-rated gadgets, from smartwatches to noise-cancelling headphones.</p>
+                    <div class="hero-buttons">
+                        <a href="#products" class="btn btn-primary" onclick="document.querySelector('[data-filter=\'Electronics\']').click();">Shop Electronics <i class="ph ph-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="https://images.unsplash.com/photo-1498049794561-7780e7231661?auto=format&fit=crop&w=800&q=80" alt="Electronics workspace" />
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="carousel-slide">
+            <div class="hero">
+                <div class="hero-content">
+                    <span class="badge">Trendy Fashion</span>
+                    <h1>Refresh Your Wardrobe</h1>
+                    <p>Discover the latest seasonal trends. Explore our new collection of comfortable, stylish apparel for every occasion.</p>
+                    <div class="hero-buttons">
+                        <a href="#products" class="btn btn-primary" onclick="document.querySelector('[data-filter=\'Clothing\']').click();">Shop Clothing <i class="ph ph-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&w=800&q=80" alt="Fashion clothing rack" />
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 4 -->
+        <div class="carousel-slide">
+            <div class="hero">
+                <div class="hero-content">
+                    <span class="badge">Home Decor</span>
+                    <h1>Transform Your Space</h1>
+                    <p>Create a sanctuary with our premium home decor selection. From artisan planters to cozy handwoven throws.</p>
+                    <div class="hero-buttons">
+                        <a href="#products" class="btn btn-primary" onclick="document.querySelector('[data-filter=\'Home\']').click();">Shop Home <i class="ph ph-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=800&q=80" alt="Modern home decor" />
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Categories Section -->
+    <section id="categories" class="section">
+        <div class="section-header">
+            <h2>Shop by Category</h2>
+            <p>Find exactly what you are looking for</p>
+        </div>
+        <div class="category-grid">
+            <div class="category-card" data-filter="Electronics" style="cursor:pointer;" onclick="document.getElementById('products').scrollIntoView({behavior: 'smooth'})">
+                <i class="ph ph-device-mobile"></i>
+                <h3>Electronics</h3>
+                <p>Latest gadgets</p>
+            </div>
+            <div class="category-card" data-filter="Clothing" style="cursor:pointer;" onclick="document.getElementById('products').scrollIntoView({behavior: 'smooth'})">
+                <i class="ph ph-t-shirt"></i>
+                <h3>Clothing</h3>
+                <p>Trendy apparel</p>
+            </div>
+            <div class="category-card" data-filter="Groceries" style="cursor:pointer;" onclick="document.getElementById('products').scrollIntoView({behavior: 'smooth'})">
+                <i class="ph ph-apple-logo"></i>
+                <h3>Groceries</h3>
+                <p>Fresh daily</p>
+            </div>
+            <div class="category-card" data-filter="Home" style="cursor:pointer;" onclick="document.getElementById('products').scrollIntoView({behavior: 'smooth'})">
+                <i class="ph ph-armchair"></i>
+                <h3>Home</h3>
+                <p>Decor & furniture</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="section bg-light">
+        <div class="section-header">
+            <h2>Featured Products</h2>
+            <p>Our most popular picks for you</p>
+            
+            <div class="filter-container">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="Electronics">Electronics</button>
+                <button class="filter-btn" data-filter="Clothing">Clothing</button>
+                <button class="filter-btn" data-filter="Groceries">Groceries</button>
+                <button class="filter-btn" data-filter="Home">Home</button>
+            </div>
+        </div>
+        
+        <div class="product-grid" id="productGrid">
+            <!-- Products injected by JavaScript -->
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="about-container">
+            <div class="about-image">
+                <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=800&q=80" alt="Fresh grocery produce" />
+            </div>
+            <div class="about-content">
+                <h2>Why Choose ShoppingMart?</h2>
+                <p>We believe in providing the best quality products at affordable prices. Our carefully curated selection ensures that you get exactly what you need, when you need it.</p>
+                <ul class="feature-list">
+                    <li><i class="ph ph-check-circle"></i> Premium Quality Guarantee</li>
+                    <li><i class="ph ph-truck"></i> Fast & Free Shipping on orders over $50</li>
+                    <li><i class="ph ph-arrow-u-up-left"></i> 30-Day Easy Returns</li>
+                    <li><i class="ph ph-headset"></i> 24/7 Customer Support</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section bg-light">
+        <div class="section-header">
+            <h2>Get in Touch</h2>
+            <p>We'd love to hear from you</p>
+        </div>
+        <div class="contact-container">
+            <div class="contact-info">
+                <div class="info-item">
+                    <i class="ph ph-map-pin"></i>
+                    <div>
+                        <h3>Visit Us</h3>
+                        <p>Rohini Sector 17 Market, New Delhi - 110089</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i class="ph ph-phone"></i>
+                    <div>
+                        <h3>Call Us</h3>
+                        <p>+91 9205458209</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i class="ph ph-envelope-simple"></i>
+                    <div>
+                        <h3>Email Us</h3>
+                        <p>anitajoshi20@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+            <form class="contact-form" id="contactForm">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" required placeholder="John Doe">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" required placeholder="john@example.com">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" rows="4" required placeholder="How can we help you?"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <a href="#" class="logo">
+                    ShoppingMart
+                </a>
+                <p>Your one-stop destination for premium products. Elevate your everyday life with ShoppingMart.</p>
+                <div class="social-links">
+                    <a href="#"><i class="ph ph-facebook-logo"></i></a>
+                    <a href="#"><i class="ph ph-twitter-logo"></i></a>
+                    <a href="#"><i class="ph ph-instagram-logo"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <a href="#home">Home</a>
+                <a href="#products">Shop</a>
+                <a href="#about">About Us</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="footer-links">
+                <h3>Customer Service</h3>
+                <a href="#">FAQ</a>
+                <a href="#">Shipping Policy</a>
+                <a href="#">Returns & Refunds</a>
+                <a href="#">Privacy Policy</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 ShoppingMart. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Product Modal -->
+    <div class="modal-overlay" id="productModal">
+        <div class="modal-content">
+            <button class="close-modal" id="closeModalBtn" aria-label="Close modal"><i class="ph ph-x"></i></button>
+            <div class="modal-body">
+                <div class="modal-image-container">
+                    <img id="modalImage" src="" alt="Product Image">
+                </div>
+                <div class="modal-details">
+                    <span class="category-tag" id="modalCategory">Category</span>
+                    <h2 id="modalTitle">Product Title</h2>
+                    <div class="modal-rating">
+                        <i class="ph-fill ph-star"></i>
+                        <i class="ph-fill ph-star"></i>
+                        <i class="ph-fill ph-star"></i>
+                        <i class="ph-fill ph-star"></i>
+                        <i class="ph-fill ph-star-half"></i>
+                        <span>(124 reviews)</span>
+                    </div>
+                    <div class="modal-price" id="modalPrice">$0.00</div>
+                    <p class="modal-description" id="modalDescription">Full product description goes here.</p>
+                    
+                    <div class="modal-actions">
+                        <div class="quantity-selector">
+                            <button id="decreaseQty"><i class="ph ph-minus"></i></button>
+                            <input type="number" id="productQty" value="1" min="1" max="10">
+                            <button id="increaseQty"><i class="ph ph-plus"></i></button>
+                        </div>
+                        <button class="btn btn-primary" id="addToCartBtn">
+                            <i class="ph ph-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                    
+                    <div class="product-meta">
+                        <p><i class="ph ph-truck"></i> Free shipping on this item</p>
+                        <p><i class="ph ph-shield-check"></i> 1 Year Warranty</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h2>Your Cart</h2>
+            <button class="close-cart-btn" id="closeCartBtn" aria-label="Close cart"><i class="ph ph-x"></i></button>
+        </div>
+        <div class="cart-items" id="cartItemsContainer">
+            <!-- Cart items injected here -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cartTotalAmount">$0.00</span>
+            </div>
+            <button class="btn btn-primary w-100" id="checkoutBtn">Checkout</button>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <i class="ph-fill ph-check-circle"></i>
+        <span id="toastMessage">Item added to cart!</span>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
