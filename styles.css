@@ -1405,45 +1405,6 @@ h1, h2, h3, h4 {
     color: var(--text-muted);
     margin-top: 2rem;
 }
-/* --- Mobile Screen Responsiveness Fix --- */
-@media (max-width: 768px) {
-  
-  /* Grid ko ek line me lane ki jagah 2-2 columns me set karne ke liye */
-  .category-grid {
-    display: grid !important;
-    grid-template-columns: repeat(2, 1fr) !important; 
-    gap: 12px !important;
-    padding: 10px !important;
-  }
-
-  /* Har ek card ko compact aur clean dikhane ke liye */
-  .category-card {
-    padding: 12px !important;
-    text-align: center !important;
-    background: #ffffff !important;
-    border-radius: 8px !important;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05) !important;
-  }
-
-  /* Icons ko ekdum clear, bada aur professional dikhane ke liye */
-  .category-card i {
-    font-size: 2rem !important; 
-    margin-bottom: 8px !important;
-    display: inline-block !important;
-    color: #4f46e5 !important; /* Blue/Indigo color primary icons ke liye */
-  }
-
-  /* Fonts size mobile ke hissab se adjust karne ke liye */
-  .category-card h3 {
-    font-size: 0.95rem !important;
-    margin: 4px 0 !important;
-  }
-  
-  .category-card p {
-    font-size: 0.75rem !important;
-    opacity: 0.7;
-  }
-}
 /* --- All Mobile Responsive Fixes (Category + Cart Sidebar) --- */
 @media (max-width: 768px) {
   
@@ -1489,10 +1450,9 @@ h1, h2, h3, h4 {
     flex-direction: column !important; 
     padding: 15px !important;
     box-sizing: border-box !important;
-    overflow: hidden !important; /* Sidebar ko screen se bahaar bhagne se rokega */
+    overflow: hidden !important; 
   }
 
-  /* Cart items list scrollable rahegi, checkout box apni jagah tight rahega */
   .cart-footer {
     margin-top: auto !important; 
     width: 100% !important;
@@ -1503,16 +1463,16 @@ h1, h2, h3, h4 {
     width: 100% !important;
     background: #ffffff !important;
     padding-top: 10px !important;
-    padding-bottom: 60px !important; /* Yeh 60px padding button ko mobile browser bar se bilkul upar khada rakhegi */
+    padding-bottom: 85px !important; /* Extra space jo button ko mobile bar se kaafi upar rakhegi */
     box-sizing: border-box !important;
   }
   
   .cart-total button {
     width: 100% !important;
-    height: 48px !important; /* Standard touch size button ka */
+    height: 50px !important; 
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
-    margin-bottom: 10px !important;
+    margin-bottom: 20px !important;
   }
 }
