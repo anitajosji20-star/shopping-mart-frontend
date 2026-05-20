@@ -1444,3 +1444,54 @@ h1, h2, h3, h4 {
     opacity: 0.7;
   }
 }
+/* --- All Mobile Responsive Fixes (Category + Cart Sidebar) --- */
+@media (max-width: 768px) {
+  
+  /* 1. Category Grid Fix */
+  .category-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important; 
+    gap: 12px !important;
+    padding: 10px !important;
+  }
+
+  .category-card {
+    padding: 12px !important;
+    text-align: center !important;
+    background: #ffffff !important;
+    border-radius: 8px !important;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05) !important;
+  }
+
+  .category-card i {
+    font-size: 2rem !important; 
+    margin-bottom: 8px !important;
+    display: inline-block !important;
+    color: #4f46e5 !important; 
+  }
+
+  .category-card h3 {
+    font-size: 0.95rem !important;
+    margin: 4px 0 !important;
+  }
+  
+  .category-card p {
+    font-size: 0.75rem !important;
+    opacity: 0.7;
+  }
+
+  /* 2. Cart Sidebar Layout Fix (Aapke Actual Name Ke Saath) */
+  .cart-sidebar {
+    width: 100% !important; /* Mobile par sidebar poori screen cover karega */
+    display: flex !important;
+    flex-direction: column !important; 
+    padding: 15px !important;
+  }
+
+  /* Checkout Box ko screen me hamesha visible rakhne ke liye */
+  .cart-total {
+    width: 100% !important;
+    margin-top: auto !important; /* Ise hamesha sidebar ke bottom me fix rakhega */
+    padding: 15px 0 !important;
+  }
+}
