@@ -1440,17 +1440,17 @@ h1, h2, h3, h4 {
     font-size: 0.75rem !important;
     opacity: 0.7;
   }
-
+  
   /* 2. Cart Sidebar Main Layout Fix */
   .cart-sidebar {
     width: 100% !important;
-    height: 100vh !important;
-    max-height: 100vh !important;
+    height: 100dvh !important; /* Yahan 100vh ki jagah 100dvh karein */
     display: flex !important;
     flex-direction: column !important; 
     padding: 15px !important;
     box-sizing: border-box !important;
     overflow: hidden !important; 
+    padding-bottom: 80px !important; /* Button ko upar rakhne ke liye extra space */
   }
 
   .cart-footer {
