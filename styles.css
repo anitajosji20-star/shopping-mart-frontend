@@ -1480,62 +1480,39 @@ h1, h2, h3, h4 {
     opacity: 0.7;
   }
 
-  /* 2. Cart Sidebar Layout Fix (Aapke Actual Name Ke Saath) */
-  .cart-sidebar {
-    width: 100% !important; /* Mobile par sidebar poori screen cover karega */
-    display: flex !important;
-    flex-direction: column !important; 
-    padding: 15px !important;
-  }
-
-  /* Checkout Box ko screen me hamesha visible rakhne ke liye */
-  .cart-total {
-    width: 100% !important;
-    margin-top: auto !important; /* Ise hamesha sidebar ke bottom me fix rakhega */
-    padding: 15px 0 !important;
-  }
-}/* 2. Cart Sidebar Layout Fix */
+  /* 2. Cart Sidebar Main Layout Fix */
   .cart-sidebar {
     width: 100% !important;
-    height: 100vh !important; /* Sidebar ko poori screen ki height dega */
+    height: 100vh !important;
+    max-height: 100vh !important;
     display: flex !important;
     flex-direction: column !important; 
     padding: 15px !important;
     box-sizing: border-box !important;
+    overflow: hidden !important; /* Sidebar ko screen se bahaar bhagne se rokega */
   }
 
-  /* Checkout Box Fix: Ise screen se thoda upar aur safe rakhne ke liye */
+  /* Cart items list scrollable rahegi, checkout box apni jagah tight rahega */
+  .cart-footer {
+    margin-top: auto !important; 
+    width: 100% !important;
+  }
+
+  /* 3. Checkout Box Perfect Area Fix */
   .cart-total {
     width: 100% !important;
-    margin-top: auto !important; /* Baaki content ke baad sabse niche push karega */
-    padding-top: 15px !important;
-    padding-bottom: 35px !important; /* Yeh extra bottom padding button ko upar safe rakhegi */
-    background: #ffffff !important; /* Background clear rakhega */
-  }
-  
-  .ca/* 2. Cart Sidebar Layout Fix */
-  .cart-sidebar {
-    width: 100% !important;
-    height: calc(100vh - 20px) !important; /* Mobile browser bar se bachne ke liye height thodi kam ki */
-    display: flex !important;
-    flex-direction: column !important; 
-    padding: 15px !important;
+    background: #ffffff !important;
+    padding-top: 10px !important;
+    padding-bottom: 60px !important; /* Yeh 60px padding button ko mobile browser bar se bilkul upar khada rakhegi */
     box-sizing: border-box !important;
-    padding-bottom: 30px !important; /* Bottom me extra space */
-  }
-
-  /* Checkout Box Fix: Button ko thoda aur upar push karne ke liye */
-  .cart-total {
-    width: 100% !important;
-    margin-top: auto !important; /* Sabse niche push karega */
-    padding-top: 15px !important;
-    padding-bottom: 45px !important; /* Yeh 45px padding button ko browser bar se kaafi upar rakhegi */
-    background: #ffffff !important; 
   }
   
   .cart-total button {
-    margin-bottom: 15px !important; /* Button ke neeche extra margin */
-  }rt-total button {
-    margin-bottom: 10px !important; /* Button ke neeche thoda sa aur gap */
+    width: 100% !important;
+    height: 48px !important; /* Standard touch size button ka */
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin-bottom: 10px !important;
   }
-
+}
