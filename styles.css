@@ -1513,6 +1513,29 @@ h1, h2, h3, h4 {
     background: #ffffff !important; /* Background clear rakhega */
   }
   
+  .ca/* 2. Cart Sidebar Layout Fix */
+  .cart-sidebar {
+    width: 100% !important;
+    height: calc(100vh - 20px) !important; /* Mobile browser bar se bachne ke liye height thodi kam ki */
+    display: flex !important;
+    flex-direction: column !important; 
+    padding: 15px !important;
+    box-sizing: border-box !important;
+    padding-bottom: 30px !important; /* Bottom me extra space */
+  }
+
+  /* Checkout Box Fix: Button ko thoda aur upar push karne ke liye */
+  .cart-total {
+    width: 100% !important;
+    margin-top: auto !important; /* Sabse niche push karega */
+    padding-top: 15px !important;
+    padding-bottom: 45px !important; /* Yeh 45px padding button ko browser bar se kaafi upar rakhegi */
+    background: #ffffff !important; 
+  }
+  
   .cart-total button {
+    margin-bottom: 15px !important; /* Button ke neeche extra margin */
+  }rt-total button {
     margin-bottom: 10px !important; /* Button ke neeche thoda sa aur gap */
   }
+
