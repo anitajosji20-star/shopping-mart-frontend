@@ -53,6 +53,7 @@ img {
     max-width: 100%;
     height: auto;
     display: block;
+    object-fit: cover;
 }
 
 button {
@@ -446,8 +447,10 @@ h1, h2, h3, h4 {
     border-radius: 2rem;
     box-shadow: var(--shadow-lg);
     object-fit: cover;
-    height: 600px;
+    max-width: 100%;
     width: 100%;
+    height: auto;
+    max-height: 600px;
 }
 
 
@@ -565,6 +568,7 @@ h1, h2, h3, h4 {
 }
 
 .product-image-wrap img {
+    max-width: 100%;
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -671,6 +675,8 @@ h1, h2, h3, h4 {
 .about-image img {
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-md);
+    max-width: 100%;
+    object-fit: cover;
 }
 
 .about-content {
@@ -1398,4 +1404,9 @@ h1, h2, h3, h4 {
     text-align: center;
     color: var(--text-muted);
     margin-top: 2rem;
+}
+img {
+  max-width: 100% !important;
+  height: auto !important;
+  object-fit: cover;
 }
